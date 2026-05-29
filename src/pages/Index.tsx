@@ -9,7 +9,7 @@ const menuItems = [
     tagStyle: {} as React.CSSProperties,
     price: "390 ₽",
     description: "Нежный матча-лате с клубничным джемом, молоком и жемчугом тапиоки.",
-    img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    img: "https://images.unsplash.com/photo-1582793988951-9aed5509eb97?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 2,
@@ -39,7 +39,7 @@ const menuItems = [
     tagStyle: { background: "#a78bfa", color: "white" } as React.CSSProperties,
     price: "420 ₽",
     description: "Матча с лавандовым сиропом, овсяным молоком и хрустящим жемчугом.",
-    img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    img: "https://images.unsplash.com/photo-1627485937980-221c88ac04f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 5,
