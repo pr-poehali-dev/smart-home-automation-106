@@ -6,7 +6,7 @@ const menuItems = [
     name: "Клубничный Матча",
     category: "Матча",
     tag: "Хит",
-    tagColor: "",
+    tagStyle: {} as React.CSSProperties,
     price: "390 ₽",
     description: "Нежный матча-лате с клубничным джемом, молоком и жемчугом тапиоки.",
     img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
@@ -16,7 +16,7 @@ const menuItems = [
     name: "Тайский розовый",
     category: "Классик",
     tag: "Новинка",
-    tagColor: "background: #c084fc; color: white;",
+    tagStyle: { background: "#c084fc", color: "white" } as React.CSSProperties,
     price: "370 ₽",
     description: "Розовый чай с кокосовым молоком, лепестками розы и белым жемчугом.",
     img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
@@ -26,7 +26,7 @@ const menuItems = [
     name: "Манго Маракуйя",
     category: "Фрукты",
     tag: "Популярное",
-    tagColor: "background: #fbbf24; color: #1a1a1a;",
+    tagStyle: { background: "#fbbf24", color: "#1a1a1a" } as React.CSSProperties,
     price: "410 ₽",
     description: "Манговый чай с маракуйей, кокосовым желе и ароматным жемчугом.",
     img: "https://images.unsplash.com/photo-1546173159-315724a31696?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
@@ -36,7 +36,7 @@ const menuItems = [
     name: "Лавандовый мечта",
     category: "Матча",
     tag: "Лимит",
-    tagColor: "background: #a78bfa; color: white;",
+    tagStyle: { background: "#a78bfa", color: "white" } as React.CSSProperties,
     price: "420 ₽",
     description: "Матча с лавандовым сиропом, овсяным молоком и хрустящим жемчугом.",
     img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
@@ -46,7 +46,7 @@ const menuItems = [
     name: "Чёрный кунжут",
     category: "Классик",
     tag: "Особый",
-    tagColor: "background: #374151; color: white;",
+    tagStyle: { background: "#374151", color: "white" } as React.CSSProperties,
     price: "440 ₽",
     description: "Кунжутный латте с коричневым сахаром, молоком и тапиокой.",
     img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
@@ -56,7 +56,7 @@ const menuItems = [
     name: "Личи & роза",
     category: "Фрукты",
     tag: "Эстетика",
-    tagColor: "background: #fbcfe8; color: #be185d;",
+    tagStyle: { background: "#fbcfe8", color: "#be185d" } as React.CSSProperties,
     price: "400 ₽",
     description: "Белый чай личи с розовой водой, желе и хрустящими жемчужинами.",
     img: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
@@ -188,7 +188,7 @@ export default function Index() {
               <div className="menu-card" key={item.id}>
                 <span
                   className="menu-tag"
-                  style={item.tagColor ? { cssText: item.tagColor } as React.CSSProperties : {}}
+                  style={item.tagStyle}
                 >
                   {item.tag}
                 </span>
