@@ -39,7 +39,7 @@ const menuItems = [
     tagStyle: { background: "#a78bfa", color: "white" } as React.CSSProperties,
     price: "420 ₽",
     description: "Матча с лавандовым сиропом, овсяным молоком и хрустящим жемчугом.",
-    img: "https://images.unsplash.com/photo-1627485937980-221c88ac04f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    img: "https://images.unsplash.com/photo-1536749035540-4f871e3a3652?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 5,
@@ -49,7 +49,7 @@ const menuItems = [
     tagStyle: { background: "#374151", color: "white" } as React.CSSProperties,
     price: "440 ₽",
     description: "Кунжутный латте с коричневым сахаром, молоком и тапиокой.",
-    img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    img: "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 6,
@@ -59,7 +59,7 @@ const menuItems = [
     tagStyle: { background: "#fbcfe8", color: "#be185d" } as React.CSSProperties,
     price: "400 ₽",
     description: "Белый чай личи с розовой водой, желе и хрустящими жемчужинами.",
-    img: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    img: "https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
   },
 ];
 
