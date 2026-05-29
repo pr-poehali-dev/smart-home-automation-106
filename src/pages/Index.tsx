@@ -1,245 +1,385 @@
+import { useState } from "react";
+
+const menuItems = [
+  {
+    id: 1,
+    name: "Клубничный Матча",
+    category: "Матча",
+    tag: "Хит",
+    tagColor: "",
+    price: "390 ₽",
+    description: "Нежный матча-лате с клубничным джемом, молоком и жемчугом тапиоки.",
+    img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    id: 2,
+    name: "Тайский розовый",
+    category: "Классик",
+    tag: "Новинка",
+    tagColor: "background: #c084fc; color: white;",
+    price: "370 ₽",
+    description: "Розовый чай с кокосовым молоком, лепестками розы и белым жемчугом.",
+    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    id: 3,
+    name: "Манго Маракуйя",
+    category: "Фрукты",
+    tag: "Популярное",
+    tagColor: "background: #fbbf24; color: #1a1a1a;",
+    price: "410 ₽",
+    description: "Манговый чай с маракуйей, кокосовым желе и ароматным жемчугом.",
+    img: "https://images.unsplash.com/photo-1546173159-315724a31696?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    id: 4,
+    name: "Лавандовый мечта",
+    category: "Матча",
+    tag: "Лимит",
+    tagColor: "background: #a78bfa; color: white;",
+    price: "420 ₽",
+    description: "Матча с лавандовым сиропом, овсяным молоком и хрустящим жемчугом.",
+    img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    id: 5,
+    name: "Чёрный кунжут",
+    category: "Классик",
+    tag: "Особый",
+    tagColor: "background: #374151; color: white;",
+    price: "440 ₽",
+    description: "Кунжутный латте с коричневым сахаром, молоком и тапиокой.",
+    img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+  },
+  {
+    id: 6,
+    name: "Личи & роза",
+    category: "Фрукты",
+    tag: "Эстетика",
+    tagColor: "background: #fbcfe8; color: #be185d;",
+    price: "400 ₽",
+    description: "Белый чай личи с розовой водой, желе и хрустящими жемчужинами.",
+    img: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+  },
+];
+
+const categories = ["Все", "Матча", "Классик", "Фрукты"];
+
 export default function Index() {
+  const [activeCategory, setActiveCategory] = useState("Все");
+
+  const filtered =
+    activeCategory === "Все"
+      ? menuItems
+      : menuItems.filter((item) => item.category === activeCategory);
+
   return (
     <>
       <div className="grain-overlay" />
 
-      <header className="header">
-        <div className="logo">VINYL*DINER</div>
+      {/* Header */}
+      <header>
+        <div className="logo">
+          boba<span>.</span>
+        </div>
         <nav>
           <a href="#">Меню</a>
           <a href="#">О нас</a>
-          <a href="#">Афиша</a>
-          <a href="#">Адреса</a>
+          <a href="#">Где найти</a>
+          <a href="#">Блог</a>
         </nav>
-        <button className="btn-cta">Забронировать</button>
+        <button className="btn-cta">Заказать</button>
       </header>
 
       <main>
+        {/* Hero */}
         <section className="hero">
           <div className="hero-content">
+            <div className="hero-eyebrow">
+              ✦ Пузырьковый чай нового поколения
+            </div>
             <h1 className="hero-title">
-              БЕЗ ПОНТОВ,
+              Твой глоток
               <br />
-              ТОЛЬКО <span>ВКУС</span>
+              <span>настроения</span>
             </h1>
-            <p className="text-base md:text-lg lg:text-xl mb-8 md:mb-10 leading-relaxed text-[#555]">
-              Эстетика 70-х в современной подаче. Локальные продукты, огненные блюда и атмосфера для настоящих ценителей.
+            <p
+              style={{
+                fontSize: "16px",
+                lineHeight: 1.7,
+                color: "var(--muted-text)",
+                marginBottom: "32px",
+                maxWidth: "420px",
+              }}
+            >
+              Бабл-ти из натуральных ингредиентов — 20+ вкусов, которые делают каждый день немного красивее.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
-              <button className="btn-cta" style={{ background: "var(--primary)", color: "white" }}>
-                Заказать
-              </button>
-              <button className="btn-cta" style={{ background: "white" }}>
-                Смотреть меню
-              </button>
+            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+              <button className="btn-cta">Смотреть меню</button>
+              <button className="btn-cta-outline">Наша история</button>
             </div>
           </div>
           <div className="hero-img">
             <div className="sticker">
-              СВЕЖАК
+              20+
               <br />
-              КАЖДЫЙ ДЕНЬ
+              вкусов
             </div>
-            <div className="floating-tag hidden md:block" style={{ top: "20%", left: "10%" }}>
-              #ЭСТЕТИКА
+            <div
+              className="floating-tag"
+              style={{ top: "18%", left: "10%" }}
+            >
+              #бабл_ти
             </div>
-            <div className="floating-tag hidden md:block" style={{ bottom: "30%", right: "20%" }}>
-              ОГОНЬ
+            <div
+              className="floating-tag"
+              style={{ bottom: "28%", right: "12%" }}
+            >
+              ✦ без красителей
             </div>
           </div>
         </section>
 
+        {/* Marquee */}
         <div className="marquee">
           <div className="marquee-content">
-            &nbsp; * БУРГЕРЫ КОТОРЫЕ РВУТ * КРАФТОВЫЕ КОКТЕЙЛИ * ТОЛЬКО РЕТРО ВАЙБ * ОТКРЫТЫ ДО 2:00 * ЛУЧШИЕ В ГОРОДЕ *
-            БУРГЕРЫ КОТОРЫЕ РВУТ * КРАФТОВЫЕ КОКТЕЙЛИ * ТОЛЬКО РЕТРО ВАЙБ * ОТКРЫТЫ ДО 2:00 * ЛУЧШИЕ В ГОРОДЕ
+            &nbsp; ✦ натуральный жемчуг тапиоки &nbsp; ✦ без искусственных красителей &nbsp; ✦ 20+ вкусов &nbsp; ✦ свежий каждый день &nbsp; ✦ натуральный жемчуг тапиоки &nbsp; ✦ без искусственных красителей &nbsp; ✦ 20+ вкусов &nbsp; ✦ свежий каждый день &nbsp;
           </div>
         </div>
 
+        {/* Menu */}
         <section className="section-padding">
           <div className="section-header">
-            <h2 className="section-title">ВЫБОР ШЕФА</h2>
+            <h2 className="section-title">
+              Наше
+              <br />
+              меню
+            </h2>
             <a
               href="#"
-              className="text-sm md:text-base"
-              style={{ color: "var(--dark)", fontWeight: 800, textTransform: "uppercase" }}
+              style={{
+                fontSize: "14px",
+                fontWeight: 600,
+                color: "var(--muted-text)",
+                textDecoration: "none",
+                borderBottom: "1.5px solid var(--border-color)",
+                paddingBottom: "2px",
+              }}
             >
-              Всё меню
+              Полный список →
             </a>
           </div>
 
+          {/* Category pills */}
+          <div className="category-pills">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                className={`category-pill${activeCategory === cat ? " active" : ""}`}
+                onClick={() => setActiveCategory(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
           <div className="menu-grid">
-            {/* Item 1 */}
-            <div className="menu-card">
-              <span className="menu-tag">Хит продаж</span>
-              <img
-                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Классический бургер"
-              />
-              <div className="menu-card-body">
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginBottom: "10px",
-                  }}
+            {filtered.map((item) => (
+              <div className="menu-card" key={item.id}>
+                <span
+                  className="menu-tag"
+                  style={item.tagColor ? { cssText: item.tagColor } as React.CSSProperties : {}}
                 >
-                  <h3>Классика</h3>
-                  <span className="price">1 400 ₽</span>
+                  {item.tag}
+                </span>
+                <img src={item.img} alt={item.name} />
+                <div className="menu-card-body">
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    <h3
+                      style={{
+                        fontSize: "17px",
+                        fontWeight: 600,
+                        fontFamily: "'DM Sans', sans-serif",
+                      }}
+                    >
+                      {item.name}
+                    </h3>
+                    <span className="price">{item.price}</span>
+                  </div>
+                  <p style={{ fontSize: "13px", color: "var(--muted-text)", lineHeight: 1.6 }}>
+                    {item.description}
+                  </p>
                 </div>
-                <p style={{ fontSize: "14px", color: "#666" }}>
-                  Тройной смэш из мраморной говядины, фирменный соус, маринованные огурцы на бриоши.
-                </p>
               </div>
-            </div>
-
-            {/* Item 2 */}
-            <div className="menu-card">
-              <span className="menu-tag" style={{ background: "var(--secondary)" }}>
-                Острое
-              </span>
-              <img
-                src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Неоновая пицца"
-              />
-              <div className="menu-card-body">
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginBottom: "10px",
-                  }}
-                >
-                  <h3>Электро Пепперони</h3>
-                  <span className="price">1 800 ₽</span>
-                </div>
-                <p style={{ fontSize: "14px", color: "#666" }}>Двойная пепперони, острый мёд, тесто на закваске.</p>
-              </div>
-            </div>
-
-            {/* Item 3 */}
-            <div className="menu-card">
-              <span className="menu-tag" style={{ background: "var(--accent)", color: "var(--dark)" }}>
-                Популярное
-              </span>
-              <img
-                src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                alt="Диско Сауэр"
-              />
-              <div className="menu-card-body">
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    marginBottom: "10px",
-                  }}
-                >
-                  <h3>Диско Сауэр</h3>
-                  <span className="price">1 200 ₽</span>
-                </div>
-                <p style={{ fontSize: "14px", color: "#666" }}>
-                  Джин, цветок бузины, голубой чай и съедобная золотая пыльца.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </section>
 
+        {/* Vibe section */}
         <section className="retro-vibe">
           <div>
-            <h2 className="vibe-title">ВАЙБ-ЧЕК ПРОЙДЕН.</h2>
-            <p className="vibe-text">
-              Мы не просто кормим. Мы создаём моменты. От плейлиста хип-хопа 90-х до диванов в стиле 70-х — каждый уголок
-              продуман для твоего идеального кадра. Бронь не нужна, просто приходи с настроением.
+            <p
+              style={{
+                fontSize: "12px",
+                fontWeight: 700,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: "var(--primary)",
+                marginBottom: "20px",
+                fontFamily: "'Space Grotesk', sans-serif",
+              }}
+            >
+              ✦ Наша философия
             </p>
-            <button className="btn-cta" style={{ background: "var(--dark)", color: "white", borderColor: "white" }}>
-              Наша история
+            <h2 className="vibe-title">
+              Красота
+              <br />
+              <span>в деталях</span>
+            </h2>
+            <p className="vibe-text">
+              Мы верим, что напиток — это не просто вкус. Это момент для себя. Каждый стакан — продуманный до жемчужинки: натуральные ингредиенты, красивая подача и атмосфера, которую хочется снимать.
+            </p>
+            <button
+              className="btn-cta"
+              style={{
+                background: "var(--primary)",
+                color: "white",
+              }}
+            >
+              Читать о нас
             </button>
           </div>
-          <div className="vibe-img"></div>
+          <div className="vibe-img" />
         </section>
 
+        {/* Gallery */}
         <section className="section-padding">
-          <h2 className="section-title" style={{ marginBottom: "40px", textAlign: "center" }}>
-            @VINYL.DINER
+          <h2
+            className="section-title"
+            style={{ marginBottom: "32px", textAlign: "center", fontSize: "20px" }}
+          >
+            <span
+              style={{
+                color: "var(--muted-text)",
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: "13px",
+                fontWeight: 700,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+              }}
+            >
+              Мы в Instagram
+            </span>
+            <br />
+            @boba.place
           </h2>
           <div className="social-grid">
             <div className="social-item">
               <img
-                src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                alt="Инста 1"
+                src="https://images.unsplash.com/photo-1558857563-b371033873b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                alt="boba 1"
               />
             </div>
             <div className="social-item">
               <img
-                src="https://images.unsplash.com/photo-1534353473418-4cfa6c56fd38?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                alt="Инста 2"
+                src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                alt="boba 2"
               />
             </div>
             <div className="social-item">
               <img
-                src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                alt="Инста 3"
+                src="https://images.unsplash.com/photo-1546173159-315724a31696?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                alt="boba 3"
               />
             </div>
             <div className="social-item">
               <img
-                src="https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                alt="Инста 4"
+                src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                alt="boba 4"
               />
             </div>
           </div>
         </section>
       </main>
 
+      {/* Footer */}
       <footer>
         <div>
-          <div className="footer-logo">VINYL*DINER</div>
-          <p style={{ color: "#666", lineHeight: 1.6 }}>
-            Твоё место для еды высокого качества и лоу-фай атмосферы. С 2024, но ощущается как 1974.
+          <div className="footer-logo">
+            boba<span>.</span>
+          </div>
+          <p style={{ color: "rgba(255,255,255,0.5)", lineHeight: 1.7, fontSize: "15px" }}>
+            Пузырьковый чай из натуральных ингредиентов. Открыты каждый день, чтобы твой день был немного красивее.
           </p>
         </div>
         <div className="footer-links">
           <h4>Навигация</h4>
           <ul>
-            <li>
-              <a href="#" style={{ color: "inherit", textDecoration: "none" }}>
-                Меню
-              </a>
-            </li>
-            <li>
-              <a href="#" style={{ color: "inherit", textDecoration: "none" }}>
-                О нас
-              </a>
-            </li>
-            <li>
-              <a href="#" style={{ color: "inherit", textDecoration: "none" }}>
-                Политика
-              </a>
-            </li>
-            <li>
-              <a href="#" style={{ color: "inherit", textDecoration: "none" }}>
-                Условия
-              </a>
-            </li>
+            <li><a href="#">Меню</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Где найти</a></li>
+            <li><a href="#">Блог</a></li>
           </ul>
         </div>
         <div className="footer-links">
           <h4>Часы работы</h4>
           <ul>
-            <li>Вт-Чт: 12:00 - 23:00</li>
-            <li>Пт-Сб: 12:00 - 02:00</li>
-            <li>Вс: 11:00 - 21:00</li>
-            <li>Пн: Выходной</li>
+            <li style={{ color: "rgba(255,255,255,0.7)", fontSize: "15px", marginBottom: "8px" }}>Пн–Пт: 09:00–22:00</li>
+            <li style={{ color: "rgba(255,255,255,0.7)", fontSize: "15px", marginBottom: "8px" }}>Сб–Вс: 10:00–23:00</li>
           </ul>
+          <div style={{ marginTop: "16px", display: "flex", gap: "12px" }}>
+            <a
+              href="#"
+              style={{
+                color: "rgba(255,255,255,0.5)",
+                textDecoration: "none",
+                fontSize: "13px",
+                fontWeight: 600,
+                letterSpacing: "0.05em",
+              }}
+            >
+              TG
+            </a>
+            <a
+              href="#"
+              style={{
+                color: "rgba(255,255,255,0.5)",
+                textDecoration: "none",
+                fontSize: "13px",
+                fontWeight: 600,
+                letterSpacing: "0.05em",
+              }}
+            >
+              IG
+            </a>
+            <a
+              href="#"
+              style={{
+                color: "rgba(255,255,255,0.5)",
+                textDecoration: "none",
+                fontSize: "13px",
+                fontWeight: 600,
+                letterSpacing: "0.05em",
+              }}
+            >
+              VK
+            </a>
+          </div>
         </div>
         <div className="footer-bottom">
-          <span>2025 VINYL DINER</span>
-          <span>ВКУС КЛАССИКИ</span>
-          <span>IG / TW / TK</span>
+          <span>© 2026 boba. — Все права защищены</span>
+          <span>
+            <a href="#" style={{ color: "inherit", textDecoration: "none" }}>Политика конфиденциальности</a>
+            &nbsp;&nbsp;·&nbsp;&nbsp;
+            <a href="#" style={{ color: "inherit", textDecoration: "none" }}>Условия использования</a>
+          </span>
         </div>
       </footer>
     </>
