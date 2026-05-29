@@ -19,7 +19,7 @@ const menuItems = [
     tagStyle: { background: "#c084fc", color: "white" } as React.CSSProperties,
     price: "370 ₽",
     description: "Розовый чай с кокосовым молоком, лепестками розы и белым жемчугом.",
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    img: "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
   },
   {
     id: 3,
