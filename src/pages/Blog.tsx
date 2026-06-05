@@ -34,7 +34,7 @@ const posts = [
   {
     id: 1,
     platform: "Instagram",
-    img: "https://images.unsplash.com/photo-1627772151341-1e1b8fc48545?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    img: "https://cdn.poehali.dev/projects/305f9e57-8e1d-48f9-8046-62a0def90239/files/5c8f860c-1870-482b-b7e8-fff5e4dafa07.jpg",
     caption: "Лавандовый мечта снова в меню 💜",
     likes: "2 341",
     date: "2 дня назад",
@@ -42,7 +42,7 @@ const posts = [
   {
     id: 2,
     platform: "Telegram",
-    img: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    img: "https://cdn.poehali.dev/projects/305f9e57-8e1d-48f9-8046-62a0def90239/files/9b243736-deed-4868-9031-3451340cf3ca.jpg",
     caption: "Клубничный Матча — хит этого лета ✨",
     likes: "1 892",
     date: "4 дня назад",
@@ -50,7 +50,7 @@ const posts = [
   {
     id: 3,
     platform: "Instagram",
-    img: "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    img: "https://cdn.poehali.dev/projects/305f9e57-8e1d-48f9-8046-62a0def90239/files/1bcbb097-c560-427c-8859-cca2b27bc5f4.jpg",
     caption: "Розовый закат и розовый чай 🌸",
     likes: "3 107",
     date: "5 дней назад",
@@ -58,7 +58,7 @@ const posts = [
   {
     id: 4,
     platform: "Instagram",
-    img: "https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    img: "https://cdn.poehali.dev/projects/305f9e57-8e1d-48f9-8046-62a0def90239/files/0f56f3e1-5e34-461c-8ed4-ec37301a5f18.jpg",
     caption: "Утро начинается с boba. ☀️",
     likes: "1 654",
     date: "6 дней назад",
@@ -66,7 +66,7 @@ const posts = [
   {
     id: 5,
     platform: "Telegram",
-    img: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    img: "https://cdn.poehali.dev/projects/305f9e57-8e1d-48f9-8046-62a0def90239/files/86b22972-c522-45a6-bc75-dffebc85f818.jpg",
     caption: "Новинка: Персик & улун 🍑 уже ждёт",
     likes: "987",
     date: "1 нед. назад",
@@ -74,8 +74,8 @@ const posts = [
   {
     id: 6,
     platform: "Instagram",
-    img: "https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    caption: "Личи & роза — самый нежный 🌺",
+    img: "https://cdn.poehali.dev/projects/305f9e57-8e1d-48f9-8046-62a0def90239/files/e95035ef-02fa-490c-91d0-c1efb75df5c3.jpg",
+    caption: "Чёрный кунжут — для тех, кто не боится 🖤",
     likes: "4 220",
     date: "1 нед. назад",
   },
