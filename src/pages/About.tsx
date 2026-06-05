@@ -82,9 +82,10 @@ function TimelineItem({ item, index }: { item: typeof timeline[0]; index: number
           <div style={{ width: "100%", maxWidth: "380px", textAlign: "right" }}>
             <span style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "80px", fontWeight: 700,
-              color: "var(--border-color)", lineHeight: 1,
+              fontSize: "88px", fontWeight: 700,
+              color: "var(--primary-dark)", lineHeight: 1,
               display: "block", marginBottom: "8px",
+              opacity: 0.85,
             }}>{item.year}</span>
             <span style={{
               display: "inline-block",
@@ -156,9 +157,10 @@ function TimelineItem({ item, index }: { item: typeof timeline[0]; index: number
           <div style={{ width: "100%", maxWidth: "380px" }}>
             <span style={{
               fontFamily: "'Cormorant Garamond', serif",
-              fontSize: "80px", fontWeight: 700,
-              color: "var(--border-color)", lineHeight: 1,
+              fontSize: "88px", fontWeight: 700,
+              color: "var(--primary-dark)", lineHeight: 1,
               display: "block", marginBottom: "8px",
+              opacity: 0.85,
             }}>{item.year}</span>
             <span style={{
               display: "inline-block",
