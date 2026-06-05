@@ -24,8 +24,8 @@ export default function Index() {
         <nav>
           <a href="#menu">Меню</a>
           <Link to="/about" style={{ textDecoration: "none", color: "var(--muted-text)", fontWeight: 500, marginLeft: "32px", fontSize: "14px", transition: "color 0.2s" }}>О нас</Link>
-          <a href="#">Где найти</a>
-          <a href="#">Блог</a>
+          <Link to="/location" style={{ textDecoration: "none", color: "var(--muted-text)", fontWeight: 500, marginLeft: "32px", fontSize: "14px", transition: "color 0.2s" }}>Где найти</Link>
+          <Link to="/blog" style={{ textDecoration: "none", color: "var(--muted-text)", fontWeight: 500, marginLeft: "32px", fontSize: "14px", transition: "color 0.2s" }}>Блог</Link>
         </nav>
         <button className="btn-cta">Заказать</button>
       </header>
@@ -306,8 +306,8 @@ export default function Index() {
           <ul>
             <li><a href="#menu">Меню</a></li>
             <li><Link to="/about" style={{ color: "rgba(255,255,255,0.7)", textDecoration: "none", fontSize: "15px" }}>О нас</Link></li>
-            <li><a href="#">Где найти</a></li>
-            <li><a href="#">Блог</a></li>
+            <li><Link to="/location" style={{ color: "rgba(255,255,255,0.7)", textDecoration: "none", fontSize: "15px" }}>Где найти</Link></li>
+            <li><Link to="/blog" style={{ color: "rgba(255,255,255,0.7)", textDecoration: "none", fontSize: "15px" }}>Блог</Link></li>
           </ul>
         </div>
         <div className="footer-links">
