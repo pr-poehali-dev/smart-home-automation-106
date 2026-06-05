@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { menuItems } from "@/data/menu";
 
-const categories = ["Все", "Матча", "Классик", "Фрукты"];
+const categories = ["Все", "Матча", "Фрукты", "Классик"];
 
 export default function Index() {
   const [activeCategory, setActiveCategory] = useState("Все");
@@ -83,6 +83,61 @@ export default function Index() {
             &nbsp; ✦ натуральный жемчуг тапиоки &nbsp; ✦ без искусственных красителей &nbsp; ✦ 20+ вкусов &nbsp; ✦ свежий каждый день &nbsp; ✦ натуральный жемчуг тапиоки &nbsp; ✦ без искусственных красителей &nbsp; ✦ 20+ вкусов &nbsp; ✦ свежий каждый день &nbsp;
           </div>
         </div>
+
+        {/* Store photo */}
+        <section style={{
+          position: "relative",
+          overflow: "hidden",
+          height: "520px",
+          borderBottom: "var(--border)",
+        }}>
+          <img
+            src="https://cdn.poehali.dev/projects/305f9e57-8e1d-48f9-8046-62a0def90239/files/1e88c68d-0699-4787-9aa1-c0b57b1900b7.jpg"
+            alt="boba. cafe"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
+          />
+          <div style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(to right, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.1) 60%, transparent 100%)",
+            display: "flex",
+            alignItems: "flex-end",
+            padding: "56px 64px",
+          }}>
+            <div>
+              <p style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: "11px",
+                fontWeight: 700,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.7)",
+                marginBottom: "12px",
+              }}>✦ Наше пространство</p>
+              <h2 style={{
+                fontFamily: "'Cormorant Garamond', serif",
+                fontSize: "clamp(36px, 5vw, 64px)",
+                fontWeight: 700,
+                color: "white",
+                lineHeight: 1.05,
+                marginBottom: "20px",
+              }}>
+                Место, где хочется<br />
+                <span style={{ fontStyle: "italic" }}>остаться</span>
+              </h2>
+              <Link to="/about" style={{ textDecoration: "none" }}>
+                <button className="btn-cta" style={{ background: "white", color: "var(--dark)" }}>
+                  Наша история
+                </button>
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* Menu */}
         <section className="section-padding" id="menu">
